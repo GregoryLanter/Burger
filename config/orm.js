@@ -10,7 +10,7 @@ let orm = {
         });
     },
 
-    insertOne: function( burger_name, devoured, cb) {
+    insertOne: function(burger_name, devoured, cb) {
         let queryString = 'insert into burgers(burger_name, devoured) values("'
         queryString += burger_name + '",'
         queryString += devoured + ');';
