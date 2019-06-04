@@ -1,0 +1,36 @@
+<img id="krusty" class="image center" src="assets/img/krusty.png" alt="Greg Lanter" width="180" height="180">
+<h1 id="title">Eat-Da-Burger</h1>
+
+<div id="ready">
+  <ul>
+    {{#each burger}}
+    {{#unless devoured}}
+    <form class="burger_form" data-id={{this.id}} data-burger={{this.burger_name}}>
+      <div class="name"> {{this.id}}. {{this.burger_name}} </div> <button class="devour" id={{this.id}}
+        type="devour">Devour</button>
+    </form>
+    {{/unless}}
+    {{/each}}
+  </ul>
+</div>
+
+<div id="devoured">
+  <h2 id="d-title">Devoured!!!</h2>
+  <ul>
+    {{#each burger}}
+    {{#if devoured}}
+    <form> {{this.id}}. {{this.burger_name}} </form>
+    {{/if}}
+    {{/each}}
+  </ul>
+</div>
+
+<form class="create-form center">
+  <div class="form-group">
+    <label for="bn">Burger Name:</label>
+    <input type="text" id="bn" name="name">
+  </div>
+
+  <button id="submit" type="create">create</button>
+</form>
+<h4 class="center">Enter a burger you want to eat! Then click submit.</h4>
